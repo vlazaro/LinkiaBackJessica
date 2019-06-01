@@ -1,0 +1,8 @@
+com\linkia\jessica\model\Direccionenvio.class
+com\linkia\jessica\model\Producto.class
+com\linkia\jessica\model\Cliente.class
+com\linkia\jessica\model\Login.class
+com\linkia\jessica\model\Categoria.class
+com\linkia\jessica\model\Administrador.class
+com\linkia\jessica\model\Orden.class
+com\linkia\jessica\model\Ordendetalle.class
