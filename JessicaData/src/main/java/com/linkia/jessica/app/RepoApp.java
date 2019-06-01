@@ -1,13 +1,13 @@
-package com.linkia.jessica.data.jessicarepository;
+package com.linkia.jessica.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JessicarepositoryApplication {
+public class RepoApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JessicarepositoryApplication.class, args);
+		SpringApplication.run(RepoApp.class, args);
 	}
 
 }
