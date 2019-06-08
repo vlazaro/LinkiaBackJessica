@@ -1,0 +1,114 @@
+La Arquitectura esta montada con microservicios java con el framework de Spring Boot
+tienes que instalar las siguientes herramientas en la maquina
+
+HERRAMIENTAS
+==============
+* Eclipse
+
+* Postman ( https://www.getpostman.com/downloads/ )  ( Esta es una herramienta para probar los microservicios)
+
+* Git , creo que esta ya esta instalada si le das a este comando ( git --version) si te sale algo es por que ya lo tienes instalado 
+  si no entras a esta url y la instalas ( git es un repositorio para compartir codigo )
+  https://git-scm.com/download/win
+
+* maven , puedes darle a este comando si te sale algo es por que ya lo tienes instalado
+  mvn --version
+  
+  si no lo instalas de aqui
+  te descargas el archivo de aqui ( https://maven.apache.org/download.cgi)
+  
+  y sigues estas instrucciones 
+  https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+  
+
+DESCARGA DEL CODIGO
+===================
+Una ves que tengas  instalado todo especialmente el GIT le das a este comando en una carpeta donde descargaras todos los proyectos que te voy a pasar
+
+git clone https://github.com/vlazaro/LinkiaBackJessica.git
+  
+si te pide usuario y contrasena pones la que esta debajo, esto te descargara todas las aplicaciones que estoy haciendo
+vlazaro@hotmail.com
+N3r342016   
+
+Creacion de base de datos
+=========================
+Te creas una base de datos con el nombre de flowerbox o en la carpeta Ficheros que ya te habras descargado con el comando git anterior
+alli hay un archivo de diagrama de la base de datos , en base a esto hay que generar la base de datos 
+puedes generar la base de datos si haces lo siguiente en workbench
+* Abres el diagrama de base de datos que te pase en la carpeta Ficheros descargada
+  le das al icono de la casita (en workbench) 
+  te vas a la opcion de diagramas el icono del centro de la barra izquierda
+  le das al boton ( + ) de Models
+  subes el diagrama que esta en la carpeta ficheros
+
+* Una vez que abras el fichero empieza la creacion de la base de datos  
+  te vas al menu de database y le das a la opcion Syncronize Model ... 
+  le das a next, next  seleccionas el schema que seguro sera mydb , luego en la parte de abajo seleccionas flowerbox que es el esquema
+  que previamente deberias haber creado en Workbench y mysql
+  
+Si no puedes con esto luego lo vemos pero necesito que instales esta herramienta para poder tener control a tu maquina en remoto 
+
+https://www.teamviewer.com/en-us/download/windows/#
+
+
+PROYECTOS 
+===================
+Estos son todos los proyectos de la parte de BACK END , luego te explico como son todos
+
+
+
+MICROSERVICIOS
+================
+1. CustomerMicro
+	. Actualizar customer
+	. Borrar customer
+	. Consultar todos
+	. Consultar por Id
+	. Consultar por nombre
+	. Consultar por apellido
+
+2. ProductMicro
+    . Actualizar Producto (insertar , actualizar)
+	. Borrar producto
+	. Consultar productos (paginado)
+	. Consultar productos por categoria (paginado)
+	. Consultar Categorias de productos 
+	. 
+
+3. CarritoMicro
+	
+	. Actualizar Orden (crear, modificar) incluye detalle orden
+	. Actualizar detalle orden
+	. Consultar Orden por estado (Carrito,FaltaInformacion,Solicitada,Pagada,Enviada,Devuelta,Entregada) 
+	. Consultar orden por fecha
+	
+	
+	
+	
+4. LoginMicro
+	. Actualizar Login (Crear , modificar)
+	. Consultar Login por username y password
+	. Actualizar Administrador (Crear, modificar)
+	
+5. SearchMicro
+
+DESCUBRIMIENTO DE MICROSERVICIOS
+==========================================
+
+1. Eureka Server
+
+
+DASHBOARD
+=====================
+1. Dahsboard service
+
+GATEWAY
+=====================
+
+1. Gateway service
+
+
+CONFIG SERVER
+=====================
+1. Config Server
