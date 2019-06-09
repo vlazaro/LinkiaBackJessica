@@ -20,25 +20,26 @@ import com.linkia.jessica.service.IDireccionEnvio;
 
 @RefreshScope
 @RestController
+@RequestMapping("/direccion")
 public class DireccionEnvioController {
 
 	@Autowired
 	IDireccionEnvio direccionService;
 	
-	@RequestMapping(value="/direccion/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public Optional<Direccionenvio> findById(@PathVariable Integer id){
 		return direccionService.findById(id);
 	}
 	
-	@RequestMapping(value="/direccion/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Direccionenvio> findAll(){
 		return direccionService.findAll();
 	}
 	
 	
-	@RequestMapping(value="/direccion/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveOrden(@RequestBody Direccionenvio direccionenvio){
 		direccionService.saveDireccionEnvio(direccionenvio);
@@ -46,7 +47,7 @@ public class DireccionEnvioController {
 	}
 	
 	
-	@RequestMapping(value="/direccion/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteOrden(@RequestBody Direccionenvio direccionenvio){
 		direccionService.deleteDireccionEnvio(direccionenvio);

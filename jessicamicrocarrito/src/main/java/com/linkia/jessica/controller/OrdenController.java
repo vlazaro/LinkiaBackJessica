@@ -20,25 +20,26 @@ import com.linkia.jessica.service.impl.OrdenService;
 
 @RefreshScope
 @RestController
+@RequestMapping("/orden")
 public class OrdenController {
 
 	@Autowired
 	OrdenService ordenService;
 	
-	@RequestMapping(value="/orden/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public Optional<Orden> findById(@PathVariable Integer id){
 		return ordenService.findById(id);
 	}
 	
-	@RequestMapping(value="/orden/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Orden> findAll(){
 		return ordenService.findAll();
 	}
 	
 	
-	@RequestMapping(value="/orden/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveOrden(@RequestBody Orden orden){
 		ordenService.saveOrden(orden);
@@ -46,20 +47,20 @@ public class OrdenController {
 	}
 	
 	
-	@RequestMapping(value="/orden/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteOrden(@RequestBody Orden orden){
 		ordenService.deleteOrden(orden);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/orden/find/{estado}/{clienteid}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{estado}/{clienteid}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Orden> findOrdenByEstadoAndCustomer(@PathVariable String estado,@PathVariable Integer clienteid){
 		return ordenService.findOrdenByEstadoAndCliente(estado, clienteid);
 	}
 	
-	@RequestMapping(value="/orden/find/{clienteid}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{clienteid}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Orden> findOrdenByCustomer(@PathVariable Integer clienteid){
 		return ordenService.findOrdenByCliente(clienteid);

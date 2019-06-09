@@ -21,6 +21,7 @@ import com.linkia.jessica.service.ILogin;
 
 @RefreshScope
 @RestController
+@RequestMapping("/login")
 public class LoginController {
 
 	@Autowired
@@ -30,20 +31,20 @@ public class LoginController {
 	IAdministrador adminService;
 	
 	
-	@RequestMapping(value="/login/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public Optional<Login> findById(@PathVariable Integer id){
 		return loginService.findById(id);
 	}
 	
-	@RequestMapping(value="/login/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Login> findAll(){
 		return loginService.findAll();
 	}
 	
 	
-	@RequestMapping(value="/login/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveLogin(@RequestBody Login login){
 		loginService.saveLogin(login);
@@ -51,24 +52,19 @@ public class LoginController {
 	}
 	
 	
-	@RequestMapping(value="/login/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteCliente(@RequestBody Login login){
 		loginService.saveLogin(login);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/login/validate",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/validate",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> validateUser(@RequestBody Login login){
 		loginService.findByUserPassword(login.getUsername(), login.getPassword());
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
-	
-	
-	
-	
-	
 	
 	
 }

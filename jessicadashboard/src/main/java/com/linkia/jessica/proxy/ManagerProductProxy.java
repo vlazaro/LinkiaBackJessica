@@ -7,4 +7,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 @RibbonClient(name="JessicaMicroProduct")
 public interface ManagerProductProxy {
 
+	
+	
+	
+	
 }

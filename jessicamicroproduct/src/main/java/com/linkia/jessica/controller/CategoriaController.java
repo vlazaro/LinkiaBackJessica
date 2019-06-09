@@ -19,24 +19,26 @@ import com.linkia.jessica.service.impl.CategoriaService;
 
 @RefreshScope
 @RestController
+
+@RequestMapping("/categoria")
 public class CategoriaController {
 	@Autowired
 	CategoriaService categoriaService;
 	
-	@RequestMapping(value="/categoria/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public Optional<Categoria> findById(@PathVariable Integer id){
 		return categoriaService.findById(id);
 	}
 	
-	@RequestMapping(value="/categoria/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Categoria> findAll(){
 		return categoriaService.findAll();
 	}
 	
 	
-	@RequestMapping(value="/categoria/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveCategoria(@RequestBody Categoria categoria){
 		categoriaService.saveCategoria(categoria);
@@ -44,7 +46,7 @@ public class CategoriaController {
 	}
 	
 	
-	@RequestMapping(value="/categoria/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteCategoria(@RequestBody Categoria categoria){
 		categoriaService.saveCategoria(categoria);

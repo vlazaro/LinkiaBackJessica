@@ -20,26 +20,27 @@ import com.linkia.jessica.service.IAdministrador;
 
 @RefreshScope
 @RestController
+@RequestMapping("/admin")
 public class AdministradorController {
 
 	@Autowired
 	IAdministrador adminService;
 	
 	
-	@RequestMapping(value="/admin/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/find/{id}",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public Optional<Administrador> findById(@PathVariable Integer id){
 		return adminService.findById(id);
 	}
 	
-	@RequestMapping(value="/admin/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/findall",method=RequestMethod.GET,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public List<Administrador> findAll(){
 		return adminService.findAll();
 	}
 	
 	
-	@RequestMapping(value="/admin/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveAdministrador(@RequestBody Administrador admin){
 		adminService.saveAdministrador(admin);
@@ -47,14 +48,14 @@ public class AdministradorController {
 	}
 	
 	
-	@RequestMapping(value="/admin/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteCliente(@RequestBody Administrador admin){
 		adminService.saveAdministrador(admin);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/admin/validate",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/validate",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> validateUser(@RequestBody Administrador admin){
 		adminService.findByUserPassword(admin.getUsername(), admin.getPassword());
