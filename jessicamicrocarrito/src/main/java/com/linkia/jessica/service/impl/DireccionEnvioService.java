@@ -34,7 +34,7 @@ public class DireccionEnvioService implements IDireccionEnvio {
 	}
 
 	@Override
-	public void deleteOrden(Direccionenvio direccionenvio) {
+	public void deleteDireccionEnvio(Direccionenvio direccionenvio) {
 		 repodireccion.delete(direccionenvio);
 		
 	}
