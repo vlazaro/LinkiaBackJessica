@@ -41,7 +41,7 @@ public class DireccionEnvioController {
 	
 	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
-	public ResponseEntity<?> saveOrden(@RequestBody Direccionenvio direccionenvio){
+	public ResponseEntity<?> saveDireccion(@RequestBody Direccionenvio direccionenvio){
 		direccionService.saveDireccionEnvio(direccionenvio);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
@@ -49,7 +49,7 @@ public class DireccionEnvioController {
 	
 	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
-	public ResponseEntity<?> deleteOrden(@RequestBody Direccionenvio direccionenvio){
+	public ResponseEntity<?> deleteDireccion(@RequestBody Direccionenvio direccionenvio){
 		direccionService.deleteDireccionEnvio(direccionenvio);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
