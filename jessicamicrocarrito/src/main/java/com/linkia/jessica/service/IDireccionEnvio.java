@@ -10,5 +10,5 @@ public interface IDireccionEnvio {
 	public List<Direccionenvio> findAll();
 	public Optional<Direccionenvio> findById(Integer id);
 	public Direccionenvio saveDireccionEnvio(Direccionenvio direccionenvio);
-	public void deleteOrden(Direccionenvio direccionenvio);
+	public void deleteDireccionEnvio(Direccionenvio direccionenvio);
 }
