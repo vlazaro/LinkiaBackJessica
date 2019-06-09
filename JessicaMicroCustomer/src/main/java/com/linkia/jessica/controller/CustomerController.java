@@ -49,7 +49,7 @@ public class CustomerController {
 	@RequestMapping(value="/cliente/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteCliente(@RequestBody Cliente cliente){
-		clienteService.saveCliente(cliente);
+		clienteService.deleteCliente(cliente);
 		return ResponseEntity.ok(HttpStatus.OK);
 	}
 	

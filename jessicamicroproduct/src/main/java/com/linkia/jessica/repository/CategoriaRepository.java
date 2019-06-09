@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 
 import com.linkia.jessica.model.Categoria;
+import com.linkia.jessica.model.Producto;
 
 
 @Repository
@@ -19,5 +20,7 @@ public interface CategoriaRepository extends CrudRepository<Categoria, Integer> 
 	@Query("SELECT c FROM Categoria c where LOWER(c.nombre)=LOWER(:nombre)")
 	Future<List<Categoria>> findProducByCategoria(@Param("nombre") String nombre);
 	
-	
+	@Async
+	@Query("SELECT c FROM Categoria c where LOWER(c.nombre)=LOWER(:nombre)")
+	Future<List<Categoria>> findByName(@Param("nombre") String nombre);
 }
