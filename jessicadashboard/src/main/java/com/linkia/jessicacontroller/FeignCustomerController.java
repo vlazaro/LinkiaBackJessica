@@ -35,13 +35,13 @@ public class FeignCustomerController {
 	}
 	
 	
-	@RequestMapping(value="/feign/cliente/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/save",method=RequestMethod.POST,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> saveCliente(@RequestBody Cliente cliente){
 		return customerproxy.saveCliente(cliente);
 	}
 	
-	@RequestMapping(value="/feign/cliente/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
+	@RequestMapping(value="/delete",method=RequestMethod.DELETE,headers="Accept=application/json",produces ="application/json")
 	@ResponseBody
 	public ResponseEntity<?> deleteCliente(@RequestBody Cliente cliente){
 		customerproxy.deleteCliente(cliente);
